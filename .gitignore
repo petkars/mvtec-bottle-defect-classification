@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+__pycache__/
+
+# Dataset and outputs
+data/
+*.xlsx
+
+# VSCode files
+.vscode/
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Others
+.DS_Store
+.env

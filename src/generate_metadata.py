@@ -38,4 +38,4 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(all_data)
     df.to_csv('metadata.csv', index=False)
-    print("✅ metadata.csv created successfully with", len(df), "entries.")
+    print(" metadata.csv created successfully with", len(df), "entries.")

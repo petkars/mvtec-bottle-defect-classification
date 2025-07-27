@@ -54,7 +54,7 @@ def split_and_copy(data, train_ratio=0.8):
         for img in val_imgs:
             shutil.copy(img, DEST_DIR / "val" / label / img.name)
 
-        print(f"✅ {label}: {len(train_imgs)} train, {len(val_imgs)} val")
+        print(f" {label}: {len(train_imgs)} train, {len(val_imgs)} val")
 
 if __name__ == "__main__":
     data = collect_images()

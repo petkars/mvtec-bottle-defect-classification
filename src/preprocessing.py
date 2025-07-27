@@ -72,8 +72,8 @@ class BottleDataset(Dataset):
 train_dataset = BottleDataset(root_dir=TRAIN_DIR, transform=transform, mode='train')
 test_dataset = BottleDataset(root_dir=TEST_DIR, transform=transform, mode='test')
 
-print(f"✅ Loaded {len(train_dataset)} training images (all 'good')")
-print(f"✅ Loaded {len(test_dataset)} test images with labels: {set(test_dataset.labels)}")
+print(f"Loaded {len(train_dataset)} training images (all 'good')")
+print(f"Loaded {len(test_dataset)} test images with labels: {set(test_dataset.labels)}")
 
 # -------------------------
 # Visualize samples

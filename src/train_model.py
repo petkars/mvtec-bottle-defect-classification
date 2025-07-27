@@ -8,15 +8,15 @@ from collections import Counter
 from sklearn.metrics import classification_report
 import numpy as np
 
-# 🔧 Device configuration
+# Device configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
-# 📁 Paths
+# Paths
 train_dir = r"D:\Eric Robotics Assignment\l0-petkars\data\bottle_split_dataset\train"
 val_dir = r"D:\Eric Robotics Assignment\l0-petkars\data\bottle_split_dataset\val"
 
-# 🔁 Data transforms with augmentation
+# Data transforms with augmentation
 train_transforms = transforms.Compose([
     transforms.Resize((256, 256)),
     transforms.RandomHorizontalFlip(),
@@ -32,35 +32,35 @@ val_transforms = transforms.Compose([
     transforms.Normalize([0.5], [0.5])
 ])
 
-# 📦 Datasets
+# Datasets
 train_dataset = datasets.ImageFolder(train_dir, transform=train_transforms)
 val_dataset = datasets.ImageFolder(val_dir, transform=val_transforms)
 
-# 📊 Class count and soft weights
+# Class count and soft weights
 class_counts = Counter([label for _, label in train_dataset])
 total_samples = sum(class_counts.values())
 
-print("\n🔢 Class counts:", dict(class_counts))
+print("\n Class counts:", dict(class_counts))
 
 soft_weights = np.log1p(total_samples / np.array([class_counts[i] for i in range(len(class_counts))]))
 soft_weights = soft_weights / soft_weights.sum()
 print("⚖️ Soft class weights:", soft_weights)
 
-# 🔁 Dataloaders
+# Dataloaders
 train_loader = DataLoader(train_dataset, batch_size=8, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=8, shuffle=False)
 
-# 🧠 Load pretrained ResNet18
+#  Load pretrained ResNet18
 model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
 num_features = model.fc.in_features
 model.fc = nn.Linear(num_features, len(train_dataset.classes))
 model = model.to(device)
 
-# 🎯 Loss and optimizer
+# Loss and optimizer
 criterion = nn.CrossEntropyLoss(weight=torch.tensor(soft_weights, dtype=torch.float).to(device))
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-# 🔁 Training loop
+# Training loop
 num_epochs = 10
 for epoch in range(num_epochs):
     model.train()
@@ -87,7 +87,7 @@ for epoch in range(num_epochs):
     epoch_acc = 100 * correct / total
     print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {epoch_loss:.4f}, Accuracy: {epoch_acc:.2f}%")
 
-# 🧪 Evaluation
+#  Evaluation
 model.eval()
 all_preds = []
 all_labels = []
@@ -100,9 +100,9 @@ with torch.no_grad():
         all_preds.extend(predicted.cpu().numpy())
         all_labels.extend(labels.numpy())
 
-# 📊 Prediction distribution
-print("\n🔍 Prediction Distribution:", Counter([int(p) for p in all_preds]))
+# Prediction distribution
+print("\nPrediction Distribution:", Counter([int(p) for p in all_preds]))
 
-# 📝 Classification report
-print("\n📊 Classification Report:")
+# Classification report
+print("\nClassification Report:")
 print(classification_report(all_labels, all_preds, target_names=val_dataset.classes))
