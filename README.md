@@ -6,7 +6,7 @@ This project is part of a Machine Learning & AI internship assignment. The goal 
 
 ---
 
-### 📁 Project Structure
+### Project Structure
 
 ```
 mvtec-bottle-defect-classification/
@@ -72,7 +72,7 @@ mvtec-bottle-defect-classification/
 | Contamination    | 0.76          | 0.79       | 0.77         |
 | **Macro Avg**    | **0.83**      | **0.86**   | **0.84**     |
 
-> ✅ These scores represent a significant improvement over our initial baseline:
+> These scores represent a significant improvement over our initial baseline:
 > - Earlier F1-scores for contamination and broken_small were below 0.60.
 > - Macro F1 average improved from **~0.71** to **0.84**.
 
