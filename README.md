@@ -101,34 +101,39 @@ mvtec-bottle-defect-classification/
 
 ## **How to Clone**
 ```bash
-git clone https://github.com/petkars/mvtec-bottle-defect-classification.git
+git clone https://github.com/yourusername/mvtec-bottle-defect-classification.git
 cd mvtec-bottle-defect-classification
-How to Run
-1. Install Requirements
-bash
-Copy
-Edit
+```
+
+---
+
+## **How to Run**
+
+### 1. Install Requirements
+```bash
 pip install -r requirements.txt
-2. Train the Model
-bash
-Copy
-Edit
-python src/train.py --epochs 25 --batch-size 32
-3. Evaluate the Model
-bash
-Copy
-Edit
+```
+
+### 2. Train the Model
+```bash
+python src/train_model.py --epochs 10 --batch-size 32
+```
+
+### 3. Evaluate the Model
+```bash
 python src/evaluate.py --weights saved_model.pth
-Future Improvements
-Try Vision Transformers (ViT) for spatial feature enhancement
+```
 
-Explore anomaly segmentation instead of classification
+---
 
-Experiment with semi-supervised learning to utilize unlabeled data
+## **Future Improvements**
+- Try Vision Transformers (ViT) for spatial feature enhancement  
+- Explore anomaly segmentation instead of classification  
+- Experiment with semi-supervised learning to utilize unlabeled data  
 
-Credits
-Dataset: MVTec AD
+---
 
-Architecture: PyTorch ResNet18
-
-Contributor: Shubham Petkar
+## **Credits**
+- **Dataset**: MVTec AD  
+- **Architecture**: PyTorch ResNet18  
+- **Contributor**: Shubham Petkar
