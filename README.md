@@ -101,7 +101,7 @@ mvtec-bottle-defect-classification/
 
 ## **How to Clone**
 ```bash
-git clone https://github.com/yourusername/mvtec-bottle-defect-classification.git
+git clone https://github.com/petkars/mvtec-bottle-defect-classification.git
 cd mvtec-bottle-defect-classification
 ```
 
@@ -126,14 +126,11 @@ python src/evaluate.py --weights saved_model.pth
 
 ---
 
-## **Future Improvements**
-- Try Vision Transformers (ViT) for spatial feature enhancement  
-- Explore anomaly segmentation instead of classification  
-- Experiment with semi-supervised learning to utilize unlabeled data  
-
----
 
 ## **Credits**
 - **Dataset**: MVTec AD  
 - **Architecture**: PyTorch ResNet18  
 - **Contributor**: Shubham Petkar
+- **Email**: petkars907@gmail.com
+
+
