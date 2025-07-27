@@ -44,7 +44,7 @@ print("\n Class counts:", dict(class_counts))
 
 soft_weights = np.log1p(total_samples / np.array([class_counts[i] for i in range(len(class_counts))]))
 soft_weights = soft_weights / soft_weights.sum()
-print("⚖️ Soft class weights:", soft_weights)
+print("Soft class weights:", soft_weights)
 
 # Dataloaders
 train_loader = DataLoader(train_dataset, batch_size=8, shuffle=True)

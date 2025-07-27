@@ -28,7 +28,7 @@ def get_image_paths(root_dir, category):
     return data
 
 if __name__ == "__main__":
-    dataset_root = 'data'  # You should have data/bottle and data/tile under this
+    dataset_root = 'data'  # bottle and tiles data under data/bottle and data/tile under this
     categories = ['bottle', 'tile']
 
     all_data = []
