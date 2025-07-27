@@ -6,27 +6,27 @@ This project is part of a Machine Learning & AI internship assignment. The goal 
 
 ---
 
-## **Project Structure**
+### 📁 Project Structure
 
+```
 mvtec-bottle-defect-classification/
-├── data/                     # Downloaded MVTec dataset
-│   └── bottle/
-│       ├── train/
-│       └── test/
-├── docs/                     # Final report, screenshots, results
-├── metadata/                 # Class mappings, stats, weights
-├── src/                      # Source code
-│   ├── generate_metadata.py
-│   ├── prepare_dataset.py
-│   ├── preprocessing.py
-│   └── train_model.py
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-├── .gitignore                # Files to ignore in Git
-└── report.pdf                # Summary of approach, results
+├── data/                     # Downloaded MVTec dataset  
+│   └── bottle/  
+│       ├── train/  
+│       └── test/  
+├── docs/                     # Final report, screenshots, results  
+├── metadata/                 # Class mappings, stats, weights  
+├── src/                      # Source code  
+│   ├── generate_metadata.py  
+│   ├── prepare_dataset.py  
+│   ├── preprocessing.py  
+│   └── train_model.py  
+├── requirements.txt          # Python dependencies  
+├── README.md                 # Project documentation  
+├── .gitignore                # Files to ignore in Git  
+└── report.pdf                # Summary of approach, results  
+```
 
-
----
 
 ## **Approach**
 
