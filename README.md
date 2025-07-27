@@ -25,9 +25,6 @@ mvtec-bottle-defect-classification/
 ├── .gitignore                # Files to ignore in Git
 └── report.pdf                # Summary of approach, results
 
-markdown
-Copy
-Edit
 
 ---
 
